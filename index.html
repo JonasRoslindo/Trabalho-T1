@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho T1</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Reservas e Agendametos</h1>
+        </div>
+    </header>
+    <button id="abrirModal">Novo Agendamento</button>
+
+    <dialog id="meuModal">
+         <h2>Novo Agendamento</h2>
+         <p>
+            <label>Solicitante: </label>
+            <input type="text"  id="solicitante" name="solicitante" >
+         </p>
+         <p>
+            <label>Bloco: </label>
+            <select id="bloco">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+                <option>D</option>
+            </select>
+         </p>
+         <p>
+            <label>Sala: </label>
+            <select id="sala">
+                <option>Sala 1</option>
+                <option>Sala 2</option>
+                <option>Sala 3</option>
+                <option>Sala 4</option>
+                <option>Sala 5</option>
+            </select>
+         </p>
+         <p>
+            <label>Data: </label>
+            <input type="date" id="data" name="data">
+         </p>
+         <p>
+            <label>Turno</label>
+            <select id="turno">
+                <option>Matutino</option>
+                <option>Vespertino</option>
+                <option>Noturno</option>
+            </select>
+         </p>
+         <button id="fecharModal">Fechar</button>
+    </dialog>
+    <script src="script.js"></script>
+</body>
+</html>
