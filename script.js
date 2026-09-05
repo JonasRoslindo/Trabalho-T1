@@ -19,7 +19,25 @@ function cadastrar() {
     const data = document.querySelector('#data').value
     const turno = document.querySelector('#turno').value
 
-    console.log(solicitante, bloco, sala)
+    console.log(solicitante, bloco, sala, data, turno)
+
+    const cadastro = {
+      Solicitante: solicitante,
+      Bloco: bloco,
+      Sala: sala,
+      Data: data,
+      Turno: turno
+    }
+
+    reserva.push(cadastro)
+
 }
 
-cadastrar()
+function salvarCadastro() {
+  const button = document.querySelector('#salvarModal')
+
+  button.addEventListener('click', cadastrar)
+  
+}
+
+salvarCadastro()
