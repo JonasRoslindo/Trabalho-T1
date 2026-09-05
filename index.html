@@ -12,20 +12,45 @@
     <header>
         <p>Sistema de Agendamento de Salas</p>
     </header>
-    <div class="metricaTotal">
-        <span>Total reservas: </span>
-        <span>12</span>
-        <div class="metricaFiltrados">
-            <span>Filtrados: </span>
-            <span>12</span>
-        </div>
-        <div class="metricaTurnos">
-            <span>Turno Noite: </span>
-            <span>12</span>
-        </div>
-        <div class="metricaBlocos">
-            <span>Blocos: </span>
-            <span>12</span>
+    <div class="container">
+        <div class="row">
+
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <span>Total reservas</span>
+                        <h3>12</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <span>Filtrados</span>
+                        <h3>12</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <span>Turno Noite</span>
+                        <h3>12</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <span>Blocos</span>
+                        <h3>12</h3>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -53,11 +78,11 @@
             <h2>Novo Agendamento</h2>
             <p>
                 <label>Solicitante: </label>
-                <input type="text" name="solicitante">
+                <input type="text" id="solicitante" name="solicitante">
             </p>
             <p>
                 <label>Bloco: </label>
-                <select>
+                <select id="bloco">
                     <option>A</option>
                     <option>B</option>
                     <option>C</option>
@@ -66,7 +91,7 @@
             </p>
             <p>
                 <label>Sala: </label>
-                <select>
+                <select id="sala">
                     <option>Sala 1</option>
                     <option>Sala 2</option>
                     <option>Sala 3</option>
@@ -76,17 +101,18 @@
             </p>
             <p>
                 <label>Data: </label>
-                <input type="date" name="data">
+                <input type="date" id="data" name="data">
             </p>
             <p>
                 <label>Turno</label>
-                <select>
+                <select id="turno">
                     <option>Matutino</option>
                     <option>Vespertino</option>
                     <option>Noturno</option>
                 </select>
             </p>
             <button id="fecharModal">Fechar</button>
+            <button id="salvarModal">Salvar</button>
         </dialog>
     </section>
 
