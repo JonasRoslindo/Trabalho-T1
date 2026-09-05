@@ -33,11 +33,28 @@ function cadastrar() {
 
 }
 
+function fazerTabela() {
+  const tbody = document.querySelector('#tabela')
+
+   tbody.innerHTML = reserva.map(({Solicitante, Bloco, Sala, Data, Turno}) =>
+        `<tr>
+            <td>${Solicitante}</td>
+            <td>${Bloco}</td>
+            <td>${Sala}</td>
+            <td>${Data}</td>
+            <td>${Turno}</td>
+        </tr>`
+    ).join('')
+}
+
 function salvarCadastro() {
   const button = document.querySelector('#salvarModal')
 
-  button.addEventListener('click', cadastrar)
-  
+  button.addEventListener('click', () => {
+    cadastrar()
+    fazerTabela()
+ })
+
 }
 
 salvarCadastro()
