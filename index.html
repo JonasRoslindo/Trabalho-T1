@@ -12,8 +12,37 @@
             <h1>Reservas e Agendametos</h1>
         </div>
     </header>
+        <p></p>
+            <label>Solicitante: </label>
+            <input type="text" id="filtroSolicitante" name="solicitante" >
+            <label>Bloco: </label>
+            <select id="filtroBloco">
+                <option value="">Todos</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+                <option>D</option>
+            </select>
+            <label>Sala: </label>
+            <select id="filtroSala">
+                <option value="">Todas</option>
+                <option>Sala 1</option>
+                <option>Sala 2</option>
+                <option>Sala 3</option>
+                <option>Sala 4</option>
+                <option>Sala 5</option>
+            </select>
+            <label>Data: </label>
+            <input type="date" id="filtroData" name="data">
+            <label>Turno</label>
+            <select id="filtroTurno">
+                <option value="">Todos</option>
+                <option>Matutino</option>
+                <option>Vespertino</option>
+                <option>Noturno</option>
+            </select>
     <button id="abrirModal">Novo Agendamento</button>
-
+<p></p>
     <dialog id="meuModal">
          <h2>Novo Agendamento</h2>
          <p>
