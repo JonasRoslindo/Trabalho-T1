@@ -8,6 +8,11 @@ const filtroBloco = document.querySelector('#filtroBloco')
 const filtroSala = document.querySelector('#filtroSala')
 const filtroData = document.querySelector('#filtroData')
 const filtroTurno = document.querySelector('#filtroTurno')
+const btnLimpar = document.querySelector('#btnLimpar')
+const totalReservas = document.querySelector('#totalReservas')
+const totalDeHoje = document.querySelector('#totalDeHoje')
+const totalNoite = document.querySelector('#totalNoite')
+const totalDia = document.querySelector('#totalDia')
 
 abrir.addEventListener("click", () => {
   modal.showModal()
@@ -24,6 +29,15 @@ salvar.addEventListener('click', () => {
     limparModal()
     modal.close()
   }
+})
+
+btnLimpar.addEventListener('click', () => {
+  document.querySelector('#filtroSolicitante').value = ''
+  document.querySelector('#filtroBloco').selectedIndex = 0
+  document.querySelector('#filtroSala').selectedIndex = 0
+  document.querySelector('#filtroData').value = ''
+  document.querySelector('#filtroTurno').selectedIndex = 0
+  fazerTabela()
 })
 
 const reservaPronta = [
@@ -72,9 +86,18 @@ function cadastrar() {
     }
 
     reserva.push(cadastro)
+    atualizarMetrica()
     return true
 }
 
+function atualizarMetrica() {
+  const hoje = new Date().toISOString().split('T')[0]
+
+  totalReservas.textContent = reserva.length
+  totalDeHoje.textContent = reserva.filter(({ Data }) => Data === hoje).length
+  totalNoite.textContent = reserva.filter(({ Turno }) => Turno === 'Noturno').length
+  totalDia.textContent = reserva.filter(({ Turno }) => Turno === 'Matutino' || Turno === 'Vespertino').length
+}
 
 function fazerTabela() {
   const tbody = document.querySelector('#tabela')
@@ -127,7 +150,9 @@ document.querySelector('#tabela').addEventListener('click', event => {
   }
 
   reserva.splice(Number(event.target.dataset.indice), 1)
+  atualizarMetrica()
   fazerTabela()
 })
 
+atualizarMetrica()
 fazerTabela()
