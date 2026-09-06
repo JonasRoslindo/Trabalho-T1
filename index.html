@@ -61,11 +61,11 @@
                 <h5 class="card-title mb-3">Filtros</h5>
                 <div class="row g-3">
                     <div class="col-md-3">
-                        <label for="solicitanteFiltro" class="form-label">
+                        <label for="filtroSolicitante" class="form-label">
                             Solicitante:
                         </label>
                         <input type="text"
-                               id="solicitanteFiltro"
+                               id="filtroSolicitante"
                                name="Solicitante"
                                class="form-control">
                     </div>
@@ -75,36 +75,50 @@
                             Data:
                         </label>
                         <input type="date"
-                               id="dataFiltro"
+                               id="filtroData"
                                name="Data"
                                class="form-control">
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <label for="blocos" class="form-label">
                             Bloco:
                         </label>
-                        <select id="blocos"
+                        <select id="filtroBloco"
                                 name="Blocos"
                                 class="form-select">
-                            <option>Todos</option>
+                            <option value="">Todos</option>
                             <option>A</option>
                             <option>B</option>
                             <option>C</option>
                         </select>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <label for="salas" class="form-label">
                             Sala:
                         </label>
-                        <select id="salas"
+                        <select id="filtroSala"
                                 name="salas"
                                 class="form-select">
-                            <option>Todos</option>
+                            <option value="">Todos</option>
                             <option>Sala 1</option>
                             <option>Sala 2</option>
                             <option>Sala 3</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="turno" class="form-label">
+                            Turno
+                        </label>
+                        <select id="filtroTurno"
+                                name="turno"
+                                class="form-select">
+                            <option value="">Todos</option>
+                            <option>Matutino</option>
+                            <option>Vespertino</option>
+                            <option>Noturno</option>
                         </select>
                     </div>
 

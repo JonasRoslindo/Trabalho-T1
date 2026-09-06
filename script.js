@@ -26,7 +26,15 @@ salvar.addEventListener('click', () => {
   }
 })
 
-const reserva = []
+const reservaPronta = [
+  {Id: '1', Solicitante: 'Lucas Ternes', Bloco: 'B', Sala: 'Sala 3', Data: '2026-09-09', Turno: 'Matutino'},
+  {Id: '2', Solicitante: 'Jonas Olos Roslindo', Bloco: 'D', Sala: 'Sala 2', Data: '2026-09-11', Turno: 'Noturno'},
+  {Id: '3', Solicitante: 'Luiz Antonio Freitas', Bloco: 'A', Sala: 'Sala 3', Data: '2026-09-11', Turno: 'Vespertino'},
+  {Id: '4', Solicitante: 'Laura Meurer Ternes', Bloco: 'C', Sala: 'Sala 1', Data: '2026-09-15', Turno: 'Noturno'},
+  {Id: '5', Solicitante: 'João Artur Serpa', Bloco: 'B', Sala: 'Sala 1', Data: '2026-09-14', Turno: 'Vespertino'}
+]
+
+const reserva = reservaPronta.map(({ Id, ...cadastro }) => cadastro)
 
 function limparModal() {
   document.querySelector('#solicitante').value = ''
@@ -52,7 +60,6 @@ function cadastrar() {
     }
 
     const cadastroDuplicado = reserva.some(item =>
-      item.Solicitante === cadastro.Solicitante &&
       item.Bloco === cadastro.Bloco &&
       item.Sala === cadastro.Sala &&
       item.Data === cadastro.Data &&
@@ -60,7 +67,7 @@ function cadastrar() {
     )
 
     if (cadastroDuplicado) {
-      alert('Esta reserva já foi cadastrada.')
+      alert(`Conflito de Agendamento: A ${sala} do Bloco ${bloco} já está ocupada no turno ${turno} na data selecionada.`)
       return false
     }
 
@@ -84,7 +91,7 @@ function fazerTabela() {
             <td>${Sala}</td>
             <td>${Data}</td>
             <td>${Turno}</td>
-            <td><button class="limpar" data-indice="${indice}">Limpar</button></td>
+            <td><button class="limpar btn btn-danger" data-indice="${indice}">Excluir</button></td>
         </tr>`
   }).join('')
 
@@ -106,7 +113,6 @@ function filtrarReservas() {
 
       return mesmoSolicitante && mesmoBloco && mesmaSala && mesmaData && mesmoTurno
     })
-
 }
 
 filtroSolicitante.addEventListener('input', fazerTabela)
@@ -123,3 +129,5 @@ document.querySelector('#tabela').addEventListener('click', event => {
   reserva.splice(Number(event.target.dataset.indice), 1)
   fazerTabela()
 })
+
+fazerTabela()
