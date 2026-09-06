@@ -15,13 +15,13 @@
         </h1>
     </header>
     <div class="container py-4">
-        <div class="row">
+        <div class="row" id="metricaAll">
 
             <div class="col-md-3">
                 <div class="card text-center shadow-sm">
                     <div class="card-body">
                         <span class="text-muted">Total Reservas</span>
-                        <h3 class="fw-bold">12</h3>
+                        <h3 class="fw-bold" id="totalReservas">0</h3>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="card text-center shadow-sm">
                     <div class="card-body">
                         <span class="text-muted">Total Reservas de Hoje</span>
-                        <h3 class="fw-bold">12</h3>
+                        <h3 class="fw-bold" id="totalDeHoje">0</h3>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <span class="text-muted">Turno Noite</span>
-                        <h3 class="fw-bold">12</h3>
+                        <h3 class="fw-bold" id="totalNoite">0</h3>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <span class="text-muted">Turno Dia</span>
-                        <h3 class="fw-bold">12</h3>
+                        <h3 class="fw-bold" id="totalDia">0</h3>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                     </div>
 
                     <div class="col-12 d-flex justify-content-end gap-2">
-                        <button class="btn btn-secondary">
+                        <button class="btn btn-secondary" id="btnLimpar">
                             Limpar
                         </button>
                         <button id="abrirModal" class="btn btn-primary">
