@@ -91,6 +91,7 @@ function cadastrar() {
 }
 
 function atualizarMetrica() {
+
   const hoje = new Date().toISOString().split('T')[0]
 
   totalReservas.textContent = reserva.length
@@ -129,6 +130,7 @@ function filtrarReservas() {
       const mesmoSolicitante = cadastro.Solicitante
         .toLowerCase()
         .includes(textoSolicitante)
+      
       const mesmoBloco = filtroBloco.value === '' || cadastro.Bloco === filtroBloco.value
       const mesmaSala = filtroSala.value === '' || cadastro.Sala === filtroSala.value
       const mesmaData = filtroData.value === '' || cadastro.Data === filtroData.value
@@ -138,6 +140,7 @@ function filtrarReservas() {
     })
 }
 
+
 filtroSolicitante.addEventListener('input', fazerTabela)
 filtroBloco.addEventListener('change', fazerTabela)
 filtroSala.addEventListener('change', fazerTabela)
@@ -145,6 +148,7 @@ filtroData.addEventListener('change', fazerTabela)
 filtroTurno.addEventListener('change', fazerTabela)
 
 document.querySelector('#tabela').addEventListener('click', event => {
+  
   if (!event.target.classList.contains('limpar')) {
     return
   }
