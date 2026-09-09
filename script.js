@@ -1,4 +1,5 @@
 //Alunos: Jonas Olos Roslindo, Lucas Ternes.
+//Professor: Welington Gadelha
 const modal = document.getElementById("meuModal")
 const abrir = document.getElementById("abrirModal")
 const fechar = document.getElementById("fecharModal")
