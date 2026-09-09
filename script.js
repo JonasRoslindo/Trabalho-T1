@@ -1,4 +1,4 @@
-
+//Alunos: Jonas Olos Roslindo, Lucas Ternes.
 const modal = document.getElementById("meuModal")
 const abrir = document.getElementById("abrirModal")
 const fechar = document.getElementById("fecharModal")
@@ -41,11 +41,11 @@ btnLimpar.addEventListener('click', () => {
 })
 
 const reservaPronta = [
-  {Id: '1', Solicitante: 'Lucas Ternes', Bloco: 'B', Sala: 'Sala 3', Data: '2026-09-09', Turno: 'Matutino'},
-  {Id: '2', Solicitante: 'Jonas Olos Roslindo', Bloco: 'D', Sala: 'Sala 2', Data: '2026-09-11', Turno: 'Noturno'},
-  {Id: '3', Solicitante: 'Luiz Antonio Freitas', Bloco: 'A', Sala: 'Sala 3', Data: '2026-09-11', Turno: 'Vespertino'},
-  {Id: '4', Solicitante: 'Laura Meurer Ternes', Bloco: 'C', Sala: 'Sala 1', Data: '2026-09-15', Turno: 'Noturno'},
-  {Id: '5', Solicitante: 'João Artur Serpa', Bloco: 'B', Sala: 'Sala 1', Data: '2026-09-14', Turno: 'Vespertino'}
+  {Id: '1', Solicitante: 'Ronaldinho Gaúcho', Bloco: 'B', Sala: 'Sala 3', Data: '2026-09-09', Turno: 'Matutino'},
+  {Id: '2', Solicitante: 'Pelé', Bloco: 'D', Sala: 'Sala 2', Data: '2026-09-11', Turno: 'Noturno'},
+  {Id: '3', Solicitante: 'Welington Gadelha Camisa Dez', Bloco: 'A', Sala: 'Sala 3', Data: '2026-09-11', Turno: 'Vespertino'},
+  {Id: '4', Solicitante: 'Neymar Pai', Bloco: 'C', Sala: 'Sala 1', Data: '2026-09-15', Turno: 'Noturno'},
+  {Id: '5', Solicitante: 'Filipe Luis Mengao', Bloco: 'B', Sala: 'Sala 1', Data: '2026-09-14', Turno: 'Vespertino'}
 ]
 
 const reserva = reservaPronta.map(({ Id, ...cadastro }) => cadastro)
